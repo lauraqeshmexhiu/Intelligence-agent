@@ -1,0 +1,26 @@
+{
+  "name": "cli",
+  "path": "/Users/laura.ceshmexhiu@clearroute.io/Documents/repo-intelligence-agent/../repos/cli",
+  "languages": {
+    "Dockerfile": 151,
+    "YAML": 2357,
+    "Markdown": 34615,
+    "Go": 827639,
+    "JSON": 7746,
+    "Shell": 1545,
+    "C": 104
+  },
+  "loc_total": 874157,
+  "commits_last_30_days": 100,
+  "top_authors": [
+    "Sebastiaan van Stijn",
+    "Vincent Demeester",
+    "Harald Albers"
+  ],
+  "has_readme": true,
+  "has_claude": false,
+  "has_license": true,
+  "has_tests": false,
+  "has_ci": true,
+  "has_dockerfile": true
+}

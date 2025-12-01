@@ -1,0 +1,26 @@
+{
+  "name": "tornado",
+  "path": "/Users/laura.ceshmexhiu@clearroute.io/Documents/repo-intelligence-agent/../repos/tornado",
+  "languages": {
+    "YAML": 31,
+    "Shell": 156,
+    "Python": 38740,
+    "Markdown": 33,
+    "C": 72,
+    "JSON": 51,
+    "JavaScript": 182
+  },
+  "loc_total": 39265,
+  "commits_last_30_days": 2,
+  "top_authors": [
+    "Ben Darnell",
+    "bdarnell",
+    "A. Jesse Jiryu Davis"
+  ],
+  "has_readme": false,
+  "has_claude": false,
+  "has_license": true,
+  "has_tests": false,
+  "has_ci": true,
+  "has_dockerfile": false
+}

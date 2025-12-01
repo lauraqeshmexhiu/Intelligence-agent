@@ -1,0 +1,23 @@
+{
+  "name": "flask",
+  "path": "/Users/laura.ceshmexhiu@clearroute.io/Documents/repo-intelligence-agent/../repos/flask",
+  "languages": {
+    "YAML": 28,
+    "Markdown": 64,
+    "Python": 14020,
+    "JSON": 4
+  },
+  "loc_total": 14116,
+  "commits_last_30_days": 7,
+  "top_authors": [
+    "David Lord",
+    "Armin Ronacher",
+    "Markus Unterwaditzer"
+  ],
+  "has_readme": true,
+  "has_claude": false,
+  "has_license": false,
+  "has_tests": true,
+  "has_ci": true,
+  "has_dockerfile": false
+}
