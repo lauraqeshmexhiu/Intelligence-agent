@@ -1,3 +1,5 @@
+# Repository Intelligence Agent
+
 The Repository Intelligence Agent is a python based CLI tool that:
 
 - Scans local Git repositories
