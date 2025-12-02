@@ -9,41 +9,102 @@ The Repository Intelligence Agent is a python based CLI tool that:
 
 ## Features
 
-Repo scanner
-- Detects `READMEs`, `Dockerfiles`, `LICENSE` files  
-- Detects test directories and test-style filenames  
-- Detects GitHub Actions CI workflows  
-- Counts lines of code per language  
-- Counts commits in the last 30 days  
-- Identifies top commit authors
+### Repo scanner -->
+The tool collects detailed metadata for each repository, including:
 
-AI Agent
-Powered by LangChain + Ollama (running a local LLM).
-Can answer questions such as:
+- Repository name & path  
+- Lines of code by language  
+- Total LOC  
+- Top 3 commit authors  
+- Number of commits in the last 30 days  
+- Presence of:
+  - `README.md`  
+  - `LICENSE`  
+  - `Dockerfile`  
+  - `tests/` directory or `_test` files  
+  - GitHub Actions workflows (`.github/workflows`) 
+
+###  AI Question Answering (LangChain + Ollama) -->
+
+You can answer questions such as:
 
 - “Which repositories use Docker?”  
 - “Which repos are missing tests?”  
 - “Which are the most active repos?”
 
-Running locally
 
-1. Clone repository
-2. cd Intelligence-agent
-3. python3 -m venv .venv
-4. source .venv/bin/activate
-5. pip install -r requirements.txt
-6. Install Ollama
-7. Ollama pull llama3.1
+The agent uses:
 
-Running Local CLI
+- Local metadata JSON files  
+- Local LangChain tools  
+- A local LLM running on Ollama (e.g., `llama3.1`)  
 
-1. Scan repositories: python main.py scan ../repos
+
+## Running Locally
+
+### 1️⃣ Setup Environment
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/lauraqeshmexhiu/Intelligence-agent.git
+   cd Intelligence-agent
+   ```
+
+2. **Create a virtual environment**
+   ```bash
+   python3 -m venv .venv
+   ```
+
+3. **Activate the virtual environment**
+   ```bash
+   source .venv/bin/activate
+   ```
+
+4. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Install Ollama**  
+   Download: https://ollama.com/download
+
+6. **Pull the Llama model**
+   ```bash
+   ollama pull llama3.1
+   ```
+
+---
+
+## 💻 Running the Local CLI
+
+### 🔍 1. Scan repositories
+
+```bash
+python main.py scan ../repos
+```
+
+This command will:
+
+- Detect all folders inside `../repos` that contain a `.git` directory  
+- Scan each repository  
+- Generate metadata  
+- Save JSON files into the `metadata/` folder  
+
+---
+
+### 💬 2. Ask the agent a question
+
+```bash
+python main.py ask metadata "Which repositories don't have tests?"
+```
 This will:
-- Detect all folders inside /path/to/git-repos that contain a .git directory
-- Scan each repository
-- Save JSON metadata files into the metadata/ folder
 
-2. python main.py ask metadata "Which repositories are using Docker?"
+- Load all repository metadata from the `metadata/` folder  
+- Initialize a LangChain agent using your local LLM (Ollama)  
+- Allow the model to call the appropriate tools to answer your question  
+
+For example, if you ask *"Which repositories are using Docker?"*,  
+the agent will automatically call the `list_repos_using_docker` tool and return the results.
 
 
 
