@@ -7,10 +7,10 @@ The Repository Intelligence Agent is a python based CLI tool that:
 - Generates JSON metadata files
 - Uses a LangChain Agent + local Ollama LLM to answer natural langage questions about the repositories
 
-Features: 
+## Features
 
 Repo scanner
-- Detects READMEs, Dockerfiles, LICENSE files  
+- Detects `READMEs`, `Dockerfiles`, `LICENSE` files  
 - Detects test directories and test-style filenames  
 - Detects GitHub Actions CI workflows  
 - Counts lines of code per language  
