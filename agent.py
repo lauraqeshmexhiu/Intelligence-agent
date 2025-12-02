@@ -81,7 +81,7 @@ def create_repo_agent(metadata_dir: str | Path):
     # Chat model
     llm = ChatOllama(model="llama3.1", temperature=0.0)
 
-    # ✔ LangChain v1 recommended agent builder
+    # agent builder
     agent_graph = create_agent(
         model=llm,
         tools=TOOLS,

@@ -6,10 +6,18 @@ from scanner import scan_directory
 
 
 def main():
+
+    """
+    Sets up CLI using python's argparse module (built-in).
+    """
     parser = argparse.ArgumentParser(
         description="Repository Intelligence Agent CLI",
     )
 
+    """"" 
+    Defines subcommands: 'scan' for scanning repos and 'ask' for querying metadata.
+    
+    """
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # --- scan command ---
@@ -41,19 +49,19 @@ def main():
     )
 
 
-    # (we’ll add `ask` later for the LangChain agent)
-        # ask_parser = subparsers.add_parser("ask", help="Ask questions about metadata")
+#    Parse arguments
     args = parser.parse_args()
 
     if args.command == "scan":
         repos_dir = args.repos_dir
         output_dir = args.output_dir
-
+        # # If the folder does not exist, create it , if it does exist, do nothing
         Path(output_dir).mkdir(parents=True, exist_ok=True)
 
         print(f"Scanning repos in: {repos_dir}")
         print(f"Writing metadata to: {output_dir}\n")
-
+        
+        # call Scanner
         scan_directory(repos_dir, output_dir)
 
     elif args.command == "ask":

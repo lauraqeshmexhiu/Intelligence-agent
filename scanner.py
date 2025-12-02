@@ -226,7 +226,7 @@ def scan_directory(repos_dir, output_dir):
             scanner = RepositoryScanner(repo_path)
             scanner.scan()
             scanner.save_metadata(output_dir)
-            print()  # Empty line for readability
+            print()  
         except Exception as e:
             print(f"Error scanning {repo_path.name}: {str(e)}\n")
             continue
